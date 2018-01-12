@@ -43,7 +43,7 @@ public class GdGame extends NumberGame {
     	if (number == secret) {
     			
     		count++;
-    		setMessage("Correct! The secret is "+secret+"/n"+"The count is"+count);
+    		setMessage("Correct! The secret is "+secret+"\n"+"The count is "+ count);
 
     		return true;
     	}
