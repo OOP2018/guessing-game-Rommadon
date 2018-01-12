@@ -1,8 +1,8 @@
 import java.util.Random; 
 /**
- * Example guessing game.
+ * guessing game.
  * 
- * @author Your Name
+ * @author Rommadon Teedo 5810545025
  * @version 2018.01.11
  */
 public class GdGame extends NumberGame {
@@ -43,7 +43,7 @@ public class GdGame extends NumberGame {
     	if (number == secret) {
     			
     		count++;
-    		setMessage("Correct! The secret is "+secret+"\n"+"The count is "+ count);
+    		setMessage("Right! The secret is "+secret+"\n"+"The count is "+ count);
 
     		return true;
     	}
@@ -55,7 +55,7 @@ public class GdGame extends NumberGame {
     	else if (number < secret) {
     		
     		count++;
-    		setMessage("Your answer is too small.");
+    		setMessage("Sorry, too small.");
     	}
     	else if (number > secret*4/3) {
     		
@@ -65,7 +65,7 @@ public class GdGame extends NumberGame {
     	else if (number > secret)  {
     		
     		count++;
-    		setMessage("Your answer is too large.");
+    		setMessage("Sorry, too large.");
     	}
     	return false;
     }
@@ -84,6 +84,6 @@ public class GdGame extends NumberGame {
 	}
     @Override
     public String toString() {
-    	return "Guess a secret number between 1 and 100";
+    	return "Guess a secret number";
     }
 }

@@ -21,7 +21,7 @@ public class GameConsole {
 		// This is just an example.
 		System.out.println( game.getMessage() );
 		while(!correct){
-		System.out.print("Your answer? ");
+		System.out.print("Your guess? ");
 		int guess = console.nextInt();
 		correct = game.guess(guess);
 		System.out.println( game.getMessage() );
