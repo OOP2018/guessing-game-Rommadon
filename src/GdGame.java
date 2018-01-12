@@ -39,7 +39,7 @@ public class GdGame extends NumberGame {
      */
     public boolean guess(int number) {
     	if (number == secret) {
-    		setMessage("Correct! The decimal value is "+secret);
+    		setMessage("Correct! The secret is "+secret+"/n"+"");
     		return true;
     	}
     	if (number < 3*secret/4) {
