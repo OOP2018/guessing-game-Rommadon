@@ -23,7 +23,7 @@ public class GameConsole {
 		int guess = console.nextInt();
 		boolean correct = game.guess(guess);
 		System.out.println( game.getMessage() );
-		return guess;
+		return game.getSecret();
 	}
 	
 }

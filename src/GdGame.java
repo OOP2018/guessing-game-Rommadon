@@ -61,7 +61,10 @@ public class GdGame extends NumberGame {
 	public int getUpperBound() {
 		return upperBound;
 	}
-    
+	/** Get the game secret. */
+	public int getSecret() {
+		return secret;
+	}
     @Override
     public String toString() {
     	return "Guess a secret number between 1 and 100";

@@ -53,6 +53,9 @@ public class NumberGame {
 	public int getUpperBound() {
 		return Integer.MAX_VALUE;  // not very helpful :-)
 	}
+	public int getSecret() {
+		return Integer.MAX_VALUE;
+	}
     
     /**
      * toString describes the game or problem.
