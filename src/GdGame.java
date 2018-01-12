@@ -10,6 +10,7 @@ public class GdGame extends NumberGame {
     private int upperBound;
     /** the solution to the game */
     private int secret;
+    private int count;
     
 	/** count guesses */
 //TODO add an attribute to count guesses
@@ -22,6 +23,7 @@ public class GdGame extends NumberGame {
 
 	public GdGame(int upperbound) {
 		final int base = 16;
+		this.count=0;
 		this.upperBound = upperbound;
 		// create the secret number
 		long seed = System.nanoTime(); 
@@ -39,19 +41,29 @@ public class GdGame extends NumberGame {
      */
     public boolean guess(int number) {
     	if (number == secret) {
-    		setMessage("Correct! The decimal value is "+secret);
+    		
+    		count++;
+    		setMessage("Correct! The secret is "+secret);
     		return true;
     	}
     	if (number < 3*secret/4) {
+    		
+    		count++;
     		setMessage("Woah! Your answer is WAY too small.");
     	}
     	else if (number < secret) {
+    		
+    		count++;
     		setMessage("Your answer is too small.");
     	}
     	else if (number > secret*4/3) {
+    		
+    		count++;
     		setMessage("No way! Your answer is WAY too large.");
     	}
-    	else /* if (number > secret) */ {
+    	else if (number > secret)  {
+    		
+    		count++;
     		setMessage("Your answer is too large.");
     	}
     	return false;
@@ -64,6 +76,10 @@ public class GdGame extends NumberGame {
 	/** Get the game secret. */
 	public int getSecret() {
 		return secret;
+	}
+	/** Get the game count. */
+	public int getCount() {
+		return count;
 	}
     @Override
     public String toString() {
