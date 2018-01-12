@@ -6,6 +6,11 @@ import java.util.Scanner;
 public class GameConsole {
 
 	/** play the game. */
+	/**
+	 * the play method plays a game using input from user.
+	 * @param guess is number that input by user
+	 * @return answer
+	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		
