@@ -14,32 +14,21 @@ public class GameSolver {
 	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
-		boolean correct = false ;
+		boolean correct = false;
+		int guess =0,min=0,max=100;
 
-		int guess =0 ;
-		int min=0,max=100;
-		
-		while(!correct){
-		correct = game.guess(guess);
-		
-
-			
-			
+		while(!correct) {
+			correct = game.guess(guess);
 			guess = min+(max-min)/2;
-			if(game.getSecret()>guess){
+			if(game.getSecret()>guess) {
 				min=guess;
-				
-			}else
-			{
+			}else {
 				max=guess;
 			}
-			 
-
-			
 		}
-		
+
 		System.out.println( game.getMessage());
 		return game.getSecret();
 	}
-	
+
 }
