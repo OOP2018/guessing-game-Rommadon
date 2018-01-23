@@ -13,21 +13,19 @@ public class GameSolver {
 	 * @return answer
 	 */
 	public int play(NumberGame game) {
-		Scanner console = new Scanner(System.in);
-		boolean correct = false;
-		int guess =0,min=0,max=100;
-
-		while(!correct) {
-			correct = game.guess(guess);
-			guess = min+(max-min)/2;
-			if(game.getMessage().equals("Sorry, too small.")) {
-				min=guess;
-			}else {
-				max=guess;
+		int min = 0;
+		int max = 100;
+		int guess = min + (max - min)/2;
+		while (!game.guess(guess)){
+			if(game.getMessage().toLowerCase().contains("large")){
+				max = guess - 1;
+				guess = min + (max - min)/2;
+			}if(game.getMessage().toLowerCase().contains("small")){
+				min = guess + 1;
+				guess = min + (max - min)/2;
 			}
 		}
-
-		System.out.println( game.getMessage());
+		System.out.print(game.getMessage()+"\n");
 		return guess;
 	}
 
