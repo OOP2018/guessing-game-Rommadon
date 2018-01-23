@@ -53,16 +53,7 @@ public class NumberGame {
 	public int getUpperBound() {
 		return Integer.MAX_VALUE;  // not very helpful :-)
 	}
-	/** 
-	 * Get solution of this game
-	 */
-
-	public int getSecret() {
-		return Integer.MAX_VALUE;
-	}
-	/** 
-	 * Get count of this game that user play
-	 */
+	
 	public int getCount() {
 		return Integer.MAX_VALUE;
 	}

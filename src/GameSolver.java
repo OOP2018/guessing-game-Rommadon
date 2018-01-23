@@ -20,7 +20,7 @@ public class GameSolver {
 		while(!correct) {
 			correct = game.guess(guess);
 			guess = min+(max-min)/2;
-			if(game.getSecret()>guess) {
+			if(game.getMessage().equals("Sorry, too small.")) {
 				min=guess;
 			}else {
 				max=guess;
@@ -28,7 +28,7 @@ public class GameSolver {
 		}
 
 		System.out.println( game.getMessage());
-		return game.getSecret();
+		return guess;
 	}
 
 }

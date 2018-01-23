@@ -14,7 +14,7 @@ public class GameConsole {
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		boolean correct = false ;
-		
+		int guess=0;
 		// describe the game
 		System.out.println( game.toString() );
 		
@@ -22,12 +22,12 @@ public class GameConsole {
 		System.out.println( game.getMessage() );
 		while(!correct){
 		System.out.print("Your guess? ");
-		int guess = console.nextInt();
+		guess = console.nextInt();
 		correct = game.guess(guess);
 		System.out.println( game.getMessage() );
 		
 		}
-		return game.getSecret();
+		return guess;
 	}
 	
 }
